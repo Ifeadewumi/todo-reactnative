@@ -1,4 +1,7 @@
-{
+
+require('dotenv').config();
+
+module.exports = {
   "expo": {
     "name": "todo-reactnative",
     "slug": "todo-reactnative",
@@ -43,6 +46,9 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "convexUrl": process.env.EXPO_PUBLIC_CONVEX_URL
     }
   }
-}
+};
