@@ -7,6 +7,6 @@ export default defineSchema({
     text: v.string(),
     completed: v.boolean(),
     dueDate: v.optional(v.string()),
-    order: v.number(),
+    order: v.optional(v.number()),
   }),
 });

@@ -12,7 +12,7 @@ export function Header() {
       <ThemedText type="title" style={styles.title}>
         TODO
       </ThemedText>
-      <TouchableOpacity onPress={toggleColorScheme}>
+      <TouchableOpacity onPress={toggleColorScheme} accessibilityLabel="Toggle color scheme">
         <IconSymbol
           name={colorScheme === 'dark' ? 'sun.max.fill' : 'moon.fill'}
           size={24}

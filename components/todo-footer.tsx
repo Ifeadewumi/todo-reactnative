@@ -13,17 +13,17 @@ export function TodoFooter({ todos, onClearCompleted, filter, setFilter }) {
     <View style={[styles.container, { backgroundColor: containerBackgroundColor }]}>
       <ThemedText style={{ color: textColor }}>{activeCount} items left</ThemedText>
       <View style={styles.filters}>
-        <TouchableOpacity onPress={() => setFilter('All')}>
+        <TouchableOpacity onPress={() => setFilter('All')} accessibilityLabel="Filter for all todos">
           <ThemedText style={[styles.filter, filter === 'All' && styles.activeFilter]}>All</ThemedText>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setFilter('Active')}>
+        <TouchableOpacity onPress={() => setFilter('Active')} accessibilityLabel="Filter for active todos">
           <ThemedText style={[styles.filter, { color: textColor }, filter === 'Active' && styles.activeFilter]}>Active</ThemedText>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setFilter('Completed')}>
+        <TouchableOpacity onPress={() => setFilter('Completed')} accessibilityLabel="Filter for completed todos">
           <ThemedText style={[styles.filter, { color: textColor }, filter === 'Completed' && styles.activeFilter]}>Completed</ThemedText>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={onClearCompleted}>
+      <TouchableOpacity onPress={onClearCompleted} accessibilityLabel="Clear completed todos">
         <ThemedText style={{ color: textColor }}>Clear Completed</ThemedText>
       </TouchableOpacity>
     </View>

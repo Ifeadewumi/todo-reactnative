@@ -39,3 +39,17 @@ export const clearCompleted = mutation({
     await Promise.all(completed.map((todo) => ctx.db.delete(todo._id)));
   },
 });
+
+export const updateDueDate = mutation({
+  args: { id: v.id('todos'), dueDate: v.string() },
+  handler: async (ctx, args) => {
+    await ctx.db.patch(args.id, { dueDate: args.dueDate });
+  },
+});
+
+export const deleteAll = mutation({
+  handler: async (ctx) => {
+    const allTodos = await ctx.db.query("todos").collect();
+    await Promise.all(allTodos.map((todo) => ctx.db.delete(todo._id)));
+  },
+});

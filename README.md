@@ -1,50 +1,49 @@
-# Welcome to your Expo app 👋
+# Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a React Native Todo application built with Expo. It uses Convex for real-time backend and features theme switching, drag-and-drop sorting, and due dates.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Create, Read, Update, and Delete Todos
+- Real-time data synchronization with Convex
+- Light and Dark theme support
+- Drag-and-drop to reorder todos
+- Set due dates for todos
 
+## Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Set up Convex:**
+   - Install the Convex CLI: `npm install -g convex`
+   - Login to Convex: `npx convex login`
+   - Create a new project: `npx convex dev` (follow the prompts)
+   - Deploy the backend: `npx convex deploy`
 
-   ```bash
-   npx expo start
-   ```
+4. **Configure Environment Variables:**
+   - Create a `.env` file in the root of the project.
+   - Add your Convex deployment URL to the `.env` file:
+     ```
+     EXPO_PUBLIC_CONVEX_URL=https://<your-project-name>.convex.cloud
+     ```
 
-In the output, you'll find options to open the app in a
+## Build and Run
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **To run the app in development mode:**
+  ```bash
+  expo start
+  ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **To create a production build:**
+  - **Android:** `eas build -p android --profile preview`
+  - **iOS:** `eas build -p ios --profile preview`
+  - **Web:** `expo export:web`
